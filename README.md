@@ -4,13 +4,13 @@ A **clean, modular, multiple file Neovim setup** built around **lazy.nvim**. Thi
 
 ## Table of Contents
 
-- [🛠️ Requirements](#requirements)
-- [💻 Installation Instructions](#installation-instructions)
-- [⚡ Core Configuration (Explanation)](#core-configuration-explanation)
-- [📦 Plugin Installation](#plugin-installation)
-- [🧩 Installed Plugins](#installed-plugins)
-- [🌱 Installing a New Language](#installing-a-new-language)
-- [⌨️ Keyboard Shortcuts](#keyboard-shortcuts)
+- [🛠️ Requirements](#-requirements)
+- [💻 Installation Instructions](#-installation-instructions)
+- [⚡ Core Configuration (Explanation)](#-core-configuration-explanation)
+- [📦 Plugin Installation](#-plugin-installation)
+- [🧩 Installed Plugins](#-installed-plugins)
+- [🌱 Installing a New Language](#-installing-a-new-language)
+- [⌨️ Keyboard Shortcuts](#-keyboard-shortcuts)
 
 ---
 
