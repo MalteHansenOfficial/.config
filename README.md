@@ -1,59 +1,127 @@
-# Neovim Configuration based on Lazy.nvim
+# 🚀 Neovim Configuration based on Lazy.nvim
 
 A **clean, modular, multiple file Neovim setup** built around **lazy.nvim**. This configuration focuses on a solid foundation without becoming too bloated.
 
 ## Table of Contents
 
-- [Requirements](#requirements)
-- [Installation Instructions](#installation-instructions)
-- [Core Configuration (Explanation)](#core-configuration-explanation)
-- [Plugin Installation](#plugin-installation)
-- [Installed Plugins](#installed-plugins)
-- [Installing a New Language](#installing-a-new-language)
-- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [🛠️ Requirements](#🛠️-requirements)
+- [💻 Installation Instructions](#💻-installation-instructions)
+- [⚡ Core Configuration (Explanation)](#⚡-core-configuration-explanation)
+- [📦 Plugin Installation](#📦-plugin-installation)
+- [🧩 Installed Plugins](#🧩-installed-plugins)
+- [🌱 Installing a New Language](#🌱-installing-a-new-language)
+- [⌨️ Keyboard Shortcuts](#⌨️-keyboard-shortcuts)
 
 ---
 
-## Requirements
+## 🛠️ Requirements
 
-### Core
+### ⚙️ Core
 - **Neovim ≥ 0.9**
 - **Git**
 - **LuaRocks**
 - **Node.js + npm or yarn**
 - **Cargo**
-- A [**Nerd Font**](https://www.nerdfonts.com/)
+- **ripgrep**
+- **fd-find**
+- [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip)
 
 ---
 
-## Installation Instructions
+## 💻 Installation Instructions
 
-**The installation instructions and the explanation of the core configuration are ai-generated!! (under supervision)**
-
-#### Linux (Debian/Ubuntu)
+#### 🐧 Linux (Debian/Ubuntu)
 ```bash
+# Update all packages and install the required packages
 sudo apt update
-sudo apt install -y neovim git luarocks nodejs npm cargo
+sudo apt install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip
+
+# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
+mkdir -p ~/.fonts
+cd ~/.fonts
+
+if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
+  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+  unzip -o FiraCode.zip
+  rm FiraCode.zip
+fi
+
+fc-cache -fv
+
+# Install the neovim config
 mkdir ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
 ```
 
-#### Linux (Fedora)
+#### 🐧 Linux (Fedora)
 ```bash
+# Update all packages and install the required packages
 sudo dnf update
-sudo dnf install -y neovim git luarocks nodejs npm cargo ripgrep
-mkdir ~/.config/nvim
+sudo dnf install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip
+
+# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
+mkdir -p ~/.fonts
+cd ~/.fonts
+
+if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
+  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+  unzip -o FiraCode.zip
+  rm FiraCode.zip
+fi
+
+fc-cache -fv
+
+# Install the neovim config
+mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
 ```
 
-#### macOS (Homebrew)
+#### 🐧 Linux (Arch)
 ```bash
-brew install neovim git luarocks node yarn cargo
-mkdir ~/.config/nvim
+# Update all packages and install the required packages
+sudo pacman -Syu
+sudo pacman -S --needed neovim git luarocks nodejs npm cargo ripgrep fd curl unzip
+
+# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
+mkdir -p ~/.fonts
+cd ~/.fonts
+
+if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
+  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+  unzip -o FiraCode.zip
+  rm FiraCode.zip
+fi
+
+fc-cache -fv
+
+# Install the neovim config
+mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
 ```
 
-#### Windows (WSL or native)
+#### 🍎 macOS (Homebrew)
+```bash
+# Update all packages and install the required packages
+brew install neovim git luarocks node yarn cargo ripgrep fd curl unzip
+
+# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
+mkdir -p ~/.fonts
+cd ~/.fonts
+
+if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
+  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+  unzip -o FiraCode.zip
+  rm FiraCode.zip
+fi
+
+fc-cache -fv
+
+# Install the neovim config
+mkdir -p ~/.config/nvim
+git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
+```
+
+#### 🪟 Windows (WSL or native)
 - **Option 1: WSL**
   - Follow Linux instructions
 - **Option 2: Native Windows**
@@ -62,6 +130,7 @@ git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
   - Install [Node.js](https://nodejs.org/)
   - Install [LuaRocks](https://luarocks.org/)
   - Install [Rust](https://www.rust-lang.org/tools/install)
+  - Install [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip)
   - Clone the repo to `%USERPROFILE%\AppData\Local\nvim`:
 ```powershell
 git clone https://github.com/MalteHansenOfficial/.config $env:LOCALAPPDATA\nvim
@@ -69,7 +138,7 @@ git clone https://github.com/MalteHansenOfficial/.config $env:LOCALAPPDATA\nvim
 
 ---
 
-After cloning, open Neovim and Lazy.nvim will automatically install all plugins:
+⚠️ After cloning, open Neovim and Lazy.nvim will automatically install all plugins:
 ```bash
 nvim
 ```
@@ -83,7 +152,7 @@ Additionally, you should run ```:MarkdownPreviewInstall``` within Vim, to finish
 
 ---
 
-## Core Configuration (Explanation)
+## ⚡ Core Configuration (Explanation)
 
 ### options.lua
 
@@ -120,7 +189,7 @@ This file is where you:
 
 ---
 
-## Plugin Installation
+## 📦 Plugin Installation
 
 Plugins are installed by creating files inside `lua/plugins/`.
 
@@ -141,7 +210,7 @@ return {
 
 ---
 
-## Installed Plugins
+## 🧩 Installed Plugins
 
 ### UI & Base
 
@@ -208,7 +277,7 @@ return {
 
 ---
 
-## Installing a New Language
+## 🌱 Installing a New Language
 
 ### 1. Treesitter
 
@@ -239,7 +308,7 @@ Install tools via Mason (e.g. `black`, `ruff`) and register them in `none-ls` la
 
 ---
 
-## Keyboard Shortcuts
+## ⌨️ Keyboard Shortcuts
 
 **If not changed, <leader> is set to the space bar.**
 
