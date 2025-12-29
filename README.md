@@ -16,6 +16,8 @@ A **clean, modular, multiple file Neovim setup** built around **lazy.nvim**. Thi
 
 ## 🛠️ Requirements
 
+**Included in Installation Instructions!**
+
 ### ⚙️ Core
 - **Neovim ≥ 0.9**
 - **Git**
@@ -32,109 +34,49 @@ A **clean, modular, multiple file Neovim setup** built around **lazy.nvim**. Thi
 
 #### 🐧 Linux (Debian/Ubuntu)
 ```bash
-# Update all packages and install the required packages
-sudo apt update
-sudo apt install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip
+sudo apt update -y
+sudo apt install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip fonts-firacode
 
-# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
-mkdir -p ~/.fonts
-cd ~/.fonts
-
-if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
-  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-  unzip -o FiraCode.zip
-  rm FiraCode.zip
-fi
-
-fc-cache -fv
-
-# Install the neovim config
-mkdir ~/.config/nvim
+mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
+mkdir -p ~/.local/share/nvim/lazy
+mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
 #### 🐧 Linux (Fedora)
 ```bash
-# Update all packages and install the required packages
-sudo dnf update
-sudo dnf install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip
+sudo dnf update -y
+sudo dnf install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip fira-code-fonts
 
-# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
-mkdir -p ~/.fonts
-cd ~/.fonts
-
-if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
-  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-  unzip -o FiraCode.zip
-  rm FiraCode.zip
-fi
-
-fc-cache -fv
-
-# Install the neovim config
 mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
+mkdir -p ~/.local/share/nvim/lazy
+mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
 #### 🐧 Linux (Arch)
 ```bash
-# Update all packages and install the required packages
 sudo pacman -Syu
-sudo pacman -S --needed neovim git luarocks nodejs npm cargo ripgrep fd curl unzip
+sudo pacman -S --needed neovim git luarocks nodejs npm cargo ripgrep fd curl unzip ttf-fira-code
 
-# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
-mkdir -p ~/.fonts
-cd ~/.fonts
-
-if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
-  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-  unzip -o FiraCode.zip
-  rm FiraCode.zip
-fi
-
-fc-cache -fv
-
-# Install the neovim config
 mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
+mkdir -p ~/.local/share/nvim/lazy
+mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
 #### 🍎 macOS (Homebrew)
 ```bash
-# Update all packages and install the required packages
-brew install neovim git luarocks node yarn cargo ripgrep fd curl unzip
+brew install neovim git luarocks node yarn cargo ripgrep fd curl unzip font-fira-code
 
-# Install FiraCode Nerd Font (alternatively you can use whichever font you like)
-mkdir -p ~/.fonts
-cd ~/.fonts
-
-if [ ! -f "FiraCodeNerdFont-Regular.ttf" ]; then
-  curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-  unzip -o FiraCode.zip
-  rm FiraCode.zip
-fi
-
-fc-cache -fv
-
-# Install the neovim config
 mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
+mkdir -p ~/.local/share/nvim/lazy
+mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
-#### 🪟 Windows (WSL or native)
-- **Option 1: WSL**
-  - Follow Linux instructions
-- **Option 2: Native Windows**
-  - Install [Neovim](https://github.com/neovim/neovim/releases)
-  - Install Git ([Git for Windows](https://git-scm.com/download/win))
-  - Install [Node.js](https://nodejs.org/)
-  - Install [LuaRocks](https://luarocks.org/)
-  - Install [Rust](https://www.rust-lang.org/tools/install)
-  - Install [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip)
-  - Clone the repo to `%USERPROFILE%\AppData\Local\nvim`:
-```powershell
-git clone https://github.com/MalteHansenOfficial/.config $env:LOCALAPPDATA\nvim
-```
+#### 🪟 Windows
+- **Use WSL to execute linux commands**
 
 ---
 
