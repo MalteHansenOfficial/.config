@@ -35,34 +35,34 @@ A **clean, modular, multiple file Neovim setup** built around **lazy.nvim**. Thi
 #### 🐧 Linux (Debian/Ubuntu)
 ```bash
 sudo apt update -y
-sudo apt install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip fonts-firacode
+sudo apt install -y neovim git luarocks nodejs yarn npm cargo ripgrep fd-find curl unzip fonts-firacode
 
 mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
 mkdir -p ~/.local/share/nvim/lazy
-mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
+mv ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
 #### 🐧 Linux (Fedora)
 ```bash
 sudo dnf update -y
-sudo dnf install -y neovim git luarocks nodejs npm cargo ripgrep fd-find curl unzip fira-code-fonts
+sudo dnf install -y neovim git luarocks nodejs yarn npm cargo ripgrep fd-find curl unzip fira-code-fonts
 
 mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
 mkdir -p ~/.local/share/nvim/lazy
-mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
+mv ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
 #### 🐧 Linux (Arch)
 ```bash
 sudo pacman -Syu
-sudo pacman -S --needed neovim git luarocks nodejs npm cargo ripgrep fd curl unzip ttf-fira-code
+sudo pacman -S --needed neovim git luarocks nodejs yarn npm cargo ripgrep fd curl unzip ttf-fira-code
 
 mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
 mkdir -p ~/.local/share/nvim/lazy
-mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
+mv ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
 #### 🍎 macOS (Homebrew)
@@ -72,7 +72,7 @@ brew install neovim git luarocks node yarn cargo ripgrep fd curl unzip font-fira
 mkdir -p ~/.config/nvim
 git clone https://github.com/MalteHansenOfficial/.config ~/.config/nvim
 mkdir -p ~/.local/share/nvim/lazy
-mv -r ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
+mv ~/.config/nvim/blink.cmp ~/.local/share/nvim/lazy
 ```
 
 #### 🪟 Windows
