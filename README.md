@@ -13,6 +13,11 @@ A **clean, modular, multiple file Neovim setup** built around **lazy.nvim**. Thi
 - [⌨️ Keyboard Shortcuts](#%EF%B8%8F-keyboard-shortcuts)
 
 ---
+## Screenshot of the installed Neovim config:
+
+![Neovim](neovim.png)
+
+---
 
 ## 🛠️ Requirements
 
